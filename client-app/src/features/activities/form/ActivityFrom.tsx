@@ -1,9 +1,13 @@
 import React from 'react';
-import { Form, Segment } from 'semantic-ui-react';
+import { Form, Segment, Button } from 'semantic-ui-react';
 
-const ActivityFrom = () => {
+interface IProps {
+    setEditMode: (editMode: boolean) => void;
+}
+
+const ActivityFrom: React.FC<IProps> = ({setEditMode}) => {
     return (
-        <Segment>
+        <Segment clearing>
             <Form>
                 <Form.Input placeholder='Title' />
                 <Form.TextArea rows={2} placeholder='Description' />
@@ -11,6 +15,8 @@ const ActivityFrom = () => {
                 <Form.Input type='date' placeholder='Date' />
                 <Form.Input placeholder='City' />
                 <Form.Input placeholder='Venue' />
+                <Button floated='right' positive type='submit' content='Submit' />
+                <Button onClick={() => setEditMode(false)} floated='right' type='button' content='Cancel' />
             </Form>
         </Segment>
     )
