@@ -35,7 +35,6 @@ const ActivityFrom: React.FC<IProps> = ({
   const [activity, setActivity] = useState<IActivity>(initializeForm);
 
   const handleSubmit = () => {
-    console.log(activity);
     if (activity.id.length === 0) {
       let newActivity = {
         ...activity,
