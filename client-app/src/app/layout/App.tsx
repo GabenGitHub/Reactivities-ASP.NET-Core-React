@@ -87,8 +87,6 @@ const App = () => {
         <ActivityDashboard
           activities={activityStore.activities}
           selectActivity={handleSelectedActivity}
-          selectedActivity={selectedActivity}
-          editMode={editMode}
           setEditMode={setEditMode}
           setSelectedActivity={setSelectedActivity}
           createActivity={handleCreateActivity}
