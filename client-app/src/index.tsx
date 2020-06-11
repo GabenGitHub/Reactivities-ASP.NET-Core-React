@@ -4,12 +4,15 @@ import "./app/layout/styles.css";
 import App from "./app/layout/App";
 import * as serviceWorker from "./serviceWorker";
 import { observerBatching } from "mobx-react-lite";
+import { BrowserRouter } from "react-router-dom";
 
 observerBatching();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
