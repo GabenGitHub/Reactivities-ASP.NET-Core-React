@@ -21,6 +21,7 @@ const ActivityFrom: React.FC<RouteComponentProps<DetailParams>> = ({
     cancelFormOpen,
     activity: initialFormState,
     loadActivity,
+    clearActivity,
   } = activityStore;
 
   useEffect(() => {
@@ -29,7 +30,10 @@ const ActivityFrom: React.FC<RouteComponentProps<DetailParams>> = ({
         () => initialFormState && setActivity(initialFormState)
       );
     }
-  });
+    return () => {
+      clearActivity();
+    };
+  }, [loadActivity, clearActivity, match.params.id, initialFormState]);
 
   const [activity, setActivity] = useState<IActivity>({
     id: "",
