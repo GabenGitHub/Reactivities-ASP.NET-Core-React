@@ -26,11 +26,11 @@ namespace API
             {
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
-            services.AddCors(options => 
+            services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4000");
                 });
             });
             services.AddMediatR(typeof(List.Handler).Assembly);
@@ -42,10 +42,12 @@ namespace API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                // app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseRouting();
 

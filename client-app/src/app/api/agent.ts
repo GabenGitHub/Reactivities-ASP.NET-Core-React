@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { IActivity } from "../models/activity";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 const responseBody = (response: AxiosResponse) => response.data;
 
