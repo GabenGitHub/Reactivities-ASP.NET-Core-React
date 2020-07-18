@@ -5,13 +5,16 @@ import App from "./app/layout/App";
 import * as serviceWorker from "./serviceWorker";
 import { observerBatching } from "mobx-react-lite";
 import { BrowserRouter } from "react-router-dom";
+import ScrollToTop from "./app/layout/ScrollToTop";
 
 observerBatching();
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
