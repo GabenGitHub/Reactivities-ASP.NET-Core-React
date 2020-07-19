@@ -24,7 +24,7 @@
     "uuid": "^8.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=4000 && react-scripts start",
     "build": "react-scripts build",
     "postbuild": "mv build ../publish/wwwroot",
     "test": "react-scripts test",
