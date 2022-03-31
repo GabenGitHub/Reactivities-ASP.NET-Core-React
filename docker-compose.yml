@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  reactivities:
+    container_name: reactivities
+    depends_on:
+      - ingatlanstat
+    image: gabendocker/reactivities
+    ports:
+      - 3000:80
+    environment:
+      - REACT_APP_API_URL=/api

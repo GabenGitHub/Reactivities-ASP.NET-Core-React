@@ -26,7 +26,6 @@
   "scripts": {
     "start": "set PORT=4000 && react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "mv build ../publish/wwwroot",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
